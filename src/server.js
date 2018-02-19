@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { renderToString } from 'react-dom/server';
 
 import reducer from './app/reducers';
-import App from './app/App';
+import App from './app/components/App';
 import template from './template';
 
 const server = express();

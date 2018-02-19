@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { deleteRecord } from '../../actions';
-import './Blog.css';
 
 const mapDispatchToProps = dispatch => ({
   onDeleteRecord(id) {

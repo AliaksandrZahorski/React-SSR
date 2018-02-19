@@ -4,10 +4,11 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
 import reducer from './reducers';
-import App from './App';
+import App from './components/App';
 
-import './index.css';
 import './browser.css';
+import './components/Blog/Blog.css';
+import './components/App.css';
 
 const preloadedState = window.__APP_INITIAL_STATE__
 delete window.__APP_INITIAL_STATE__

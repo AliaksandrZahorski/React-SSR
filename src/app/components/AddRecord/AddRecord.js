@@ -10,28 +10,31 @@ const mapDispatchToProps = dispatch => ({
 });
 
 class AddRecord extends React.Component {
-  state = {
-    author: '',
-    title: '',
-    text: '',
-  };
-
-  onSubmitForm = e => {
+  constructor( ) {
+    super( );
+    this.state = {
+      author: '',
+      title: '',
+      text: '',
+    };
+  }
+  
+  onSubmitForm(e) {
     e.preventDefault();
     this.props.onAddRecord(this.state);
   };
 
-  handleAuthorChange = e => {
+  handleAuthorChange(e) {
     e.preventDefault();
     this.setState({ author: e.target.value });
   };
 
-  handleTitleChange = e => {
+  handleTitleChange(e) {
     e.preventDefault();
     this.setState({ title: e.target.value });
   };
 
-  handleTextChange = e => {
+  handleTextChange(e) {
     e.preventDefault();
     this.setState({ text: e.target.value });
   };
@@ -39,7 +42,7 @@ class AddRecord extends React.Component {
   render() {
     return(
       <div>
-        <form onSubmit={this.onSubmitForm} autoComplete="off">
+        <form onSubmit={this.onSubmitForm.bind(this)} autoComplete="off">
           <label htmlFor="author">
             Author
           </label>
@@ -47,7 +50,7 @@ class AddRecord extends React.Component {
             name="author"
             id="author"
             value={this.state.author}
-            onChange={this.handleAuthorChange}
+            onChange={this.handleAuthorChange.bind(this)}
           />
           <label htmlFor="title">
             Title
@@ -56,7 +59,7 @@ class AddRecord extends React.Component {
             name="title"
             id="title"
             value={this.state.title}
-            onChange={this.handleTitleChange}
+            onChange={this.handleTitleChange.bind(this)}
           />
           <label htmlFor="text">
             Text
@@ -65,7 +68,7 @@ class AddRecord extends React.Component {
             name="text"
             id="text"
             value={this.state.text}
-            onChange={this.handleTextChange}
+            onChange={this.handleTextChange.bind(this)}
           />
           <button type="submit">
             Add

@@ -42,7 +42,7 @@ module.exports = [
     module: {
       loaders: [
         {
-          test: /\.js$/,
+          test: /\.js|jsx$/,
           loader: 'babel'
         },
       ].concat(commonLoaders)

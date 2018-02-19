@@ -10,11 +10,14 @@ const mapStateToProps = ({ blogs }) => ({
 
 
 class BlogContainer extends React.Component  {
-  state = {
-    filter: '',
-  };
-
-  onSearch = e => {
+  constructor( ) {
+    super( );
+    this.state ={
+      filter: '',
+    };
+  }
+  
+  onSearch(e) {
     const value = e.target.value.toLowerCase();
     this.setState({filter: value});
   }
@@ -26,7 +29,7 @@ class BlogContainer extends React.Component  {
     });
     return(
       <div>
-        <BlogFilter onSearch={this.onSearch} />
+        <BlogFilter onSearch={this.onSearch.bind(this)} />
         <BlogList blogs={result} />
       </div>
     );
